@@ -13,7 +13,7 @@ sudo apt-get -qq install libgflags-dev libgoogle-glog-dev liblmdb-dev
 
 # build caffe
 echo "Building Caffe, MPI status: ${CAFFE_USE_MPI}"
-cd ../../caffe-action
+cd lib/caffe-action
 [[ -d build ]] || mkdir build
 cd build
 if [ "$CAFFE_USE_MPI" == "MPI_ON" ]; then
