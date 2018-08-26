@@ -36,7 +36,7 @@ echo "Building OpenCV" $version
 cd opencv-$version
 [[ -d build ]] || mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D WITH_TBB=ON  -D WITH_V4L=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CUDA_GENERATION=Kepler -D WITH_TBB=ON  -D WITH_V4L=ON ..
 if make -j32 ; then
     cp lib/cv2.so ../../../
     echo "OpenCV" $version "built."
