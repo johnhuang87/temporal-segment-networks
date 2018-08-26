@@ -1,3 +1,15 @@
+!/usr/bin/env bash
+CAFFE_USE_MPI=${1:-OFF}
+CAFFE_MPI_PREFIX=${MPI_PREFIX:-""}
+
+# update the submodules: Caffe and Dense Flow
+git submodule update --remote
+
+# install Caffe dependencies
+sudo apt-get -qq install libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev
+sudo apt-get -qq install --no-install-recommends libboost1.55-all-dev
+sudo apt-get -qq install libgflags-dev libgoogle-glog-dev liblmdb-dev
+
 
 # build caffe
 echo "Building Caffe, MPI status: ${CAFFE_USE_MPI}"
